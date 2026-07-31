@@ -2,17 +2,17 @@
 
 namespace App\Repositories\Interfaces;
 
+use App\Models\Product;
+
 interface ProductRepositoryInterface
 {
     public function getAllProducts(int $perPage);
 
-    public function getProductByid(int $id);
+    public function findProductById(int $id): Product;
 
-    public function getAllProductByCategoryId(int $categoryId);
+    public function createProduct(array $data): Product;
 
-    public function createProduct(array $data);
+    public function updateProduct(int $id, array $data): Product;
 
-    public function updateProduct(int $id, array $data);
-
-    public function deleteProduct(int $id);
+    public function deleteProduct(int $id): void;
 }
