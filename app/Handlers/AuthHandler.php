@@ -5,6 +5,7 @@ namespace App\Handlers;
 use App\Helpers\ResponseHelper;
 use App\Repositories\Interfaces\AuthRepositoryInterface;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class AuthHandler
 {

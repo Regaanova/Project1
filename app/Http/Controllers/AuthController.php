@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Handlers\AuthHandler;
 use App\Helpers\ResponseHelper;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Resources\LoginResource;
+use App\Http\Resources\LoginResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

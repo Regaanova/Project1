@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Repositories\Implementations\AuthRepository;
+use App\Repositories\Implementations\CategoryRepository;
 use App\Repositories\Interfaces\AuthRepositoryInterface;
+use App\Repositories\Interfaces\CategoryRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $repositories = [
             AuthRepositoryInterface::class => AuthRepository::class,
+            CategoryRepositoryInterface::class => CategoryRepository::class,
         ];
 
         foreach( $repositories as $interface => $repository){

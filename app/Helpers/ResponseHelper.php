@@ -2,7 +2,9 @@
 
 namespace App\Helpers;
 
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class ResponseHelper
 {
@@ -15,6 +17,28 @@ class ResponseHelper
             'success' => true,
             'message' => $message,
             'data' => $data,
+        ], $status);
+    }
+
+    public static function paginated(
+        string $message,
+        LengthAwarePaginator $pagination,
+        AnonymousResourceCollection $resource,
+        int $status = 200
+    ): JsonResponse {
+        return response()->json([
+            'success' => true,
+            'message' => $message,
+            'data' => $resource->collection,
+            'pagination' => [
+                'current_page' => $pagination->currentPage(),
+                'last_page' => $pagination->lastPage(),
+                'per_page' => $pagination->perPage(),
+                'total' => $pagination->total(),
+                'from' => $pagination->firstItem(),
+                'to' => $pagination->lastItem(),
+                'has_more_pages' => $pagination->hasMorePages(),
+            ],
         ], $status);
     }
 
