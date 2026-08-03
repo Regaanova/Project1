@@ -6,9 +6,7 @@ use App\Handlers\SupplierHandler;
 use App\Helpers\ResponseHelper;
 use App\Http\Requests\SupplierRequest;
 use App\Http\Resources\SupplierResource;
-use App\Models\Supplier;
 use App\Repositories\Interfaces\SupplierRepositoryInterface;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class SupplierController extends Controller

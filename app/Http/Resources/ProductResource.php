@@ -30,8 +30,13 @@ class ProductResource extends JsonResource
                 }),
             ],
 
-            'price' => $this->price,
+            'buy_price' => $this->buy_price,
+            'sell_price' => $this->sell_price,
+
             'stock' => $this->stock,
+            'sku' => $this->sku,
+            'image' => $this->image,
+            'is_active' => $this->is_active,
 
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

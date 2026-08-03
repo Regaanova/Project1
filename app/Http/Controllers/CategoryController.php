@@ -6,9 +6,7 @@ use App\Handlers\CategoryHandler;
 use App\Helpers\ResponseHelper;
 use App\Http\Requests\CategoryRequest;
 use App\Http\Resources\CategoryResource;
-use App\Models\Category;
 use App\Repositories\Interfaces\CategoryRepositoryInterface;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller

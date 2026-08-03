@@ -31,6 +31,17 @@ class CategoryRequest extends FormRequest
                 Rule::unique('categories', 'name')
                     ->ignore($this->route('category')),
             ],
+            'description' => [
+                'nullable',
+                'string',
+            ],
+            'code' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('categories', 'code')
+                    ->ignore($this->route('category')),
+            ],
         ];
     }
 }

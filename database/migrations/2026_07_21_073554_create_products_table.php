@@ -23,7 +23,11 @@ return new class extends Migration
                 ->restrictOnDelete();
             $table->string('name');
             $table->integer('stock');
-            $table->decimal('price', 10, 2);
+            $table->decimal('buy_price', 10, 2);
+            $table->decimal('sell_price', 10, 2);
+            $table->string('sku')->unique();
+            $table->string('image')->nullable();
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }

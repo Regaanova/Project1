@@ -29,6 +29,13 @@ class ProductRepository implements ProductRepositoryInterface
         return $product;
     }
 
+    // public function addStockProduct(int $id, int $stock): Product
+    // {
+    //     $product = Product::findOrFail($id);
+    //     $product->increment("stock", $stock);
+    //     return $product;
+    // }
+
     public function deleteProduct(int $id): void
     {
         $product = Product::findOrFail($id);
