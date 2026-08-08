@@ -18,9 +18,6 @@ class ProductSeeder extends Seeder
         // Ambil semua kategori dan jadikan "code" sebagai key
         $categories = Category::get()->keyBy('code');
 
-        // Ambil semua id supplier
-        $supplierIds = Supplier::pluck('id');
-
         // Ambil service generate SKU
         $skuService = app(ProductSkuService::class);
         $products = [
@@ -54,8 +51,7 @@ class ProductSeeder extends Seeder
 
             Product::create([
                 'category_id' => $category->id,
-                'supplier_id' => $supplierIds->random(),
-
+                
                 'name' => $product['name'],
                 'stock' => $product['stock'],
 

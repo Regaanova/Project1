@@ -28,11 +28,6 @@ class ProductRequest extends FormRequest
                 'integer',
                 'exists:categories,id',
             ],
-            "supplier_id" => [
-                'required',
-                'integer',
-                'exists:suppliers,id',
-            ],
             "name" => [
                 'required',
                 'string',

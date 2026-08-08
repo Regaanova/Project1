@@ -23,13 +23,6 @@ class ProductResource extends JsonResource
                 }),
             ],
 
-            'supplier' => [
-                'id' => $this->supplier_id,
-                'name' => $this->whenLoaded('supplier', function () {
-                    return $this->supplier->name;
-                }),
-            ],
-
             'buy_price' => $this->buy_price,
             'sell_price' => $this->sell_price,
 

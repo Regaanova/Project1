@@ -17,10 +17,6 @@ return new class extends Migration
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->restrictOnDelete();
-            $table->foreignId('supplier_id')
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->restrictOnDelete();
             $table->string('name');
             $table->integer('stock');
             $table->decimal('buy_price', 10, 2);

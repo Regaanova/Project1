@@ -11,8 +11,8 @@ class Supplier extends Model
 
     protected $guarded = ['id'];
 
-    public function products()
+    public function purchases()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Purchase::class);
     }
 }
